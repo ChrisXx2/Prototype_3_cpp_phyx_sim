@@ -3,6 +3,8 @@
 #include <cstdio>
 #include <cstdlib>
 #include <limits>
+#include <fstream>
+#include <string>
 
 #include "Vector2D.h"
 #include "SurfacePlane.h"
@@ -10,7 +12,7 @@
 #include "FreeParticle2D.h"
 
 // ---------------------------------------------------------------------------
-// Input helpers
+// Input helpers. used to prevent invalid inputs and crashes
 // ---------------------------------------------------------------------------
 
 static double readDouble(const char* prompt) {
@@ -36,7 +38,7 @@ static int readPositiveInt(const char* prompt) {
 }
 
 // ---------------------------------------------------------------------------
-// Simulation routines
+// Ze kalkoolations
 // ---------------------------------------------------------------------------
 
 static void runProjectileSimulation() {
@@ -84,6 +86,27 @@ static void runProjectileSimulation() {
     }
 
     printf("\n--- Simulation End ---\n");
+    
+    printf("\n 1 - Export");
+    printf("\n 2 - Exit");
+
+    int optionss;
+    std::cin >> optionss;
+
+    switch (optionss)
+    {
+    case 1:
+        printf("Not implemented yet");
+        break;
+
+    case 2:
+        break;
+    
+    default:
+        printf("Unknown choice. Exiting.\n");
+        return;
+    }
+
 }
 
 static void runFreeParticleSimulation() {
@@ -154,10 +177,33 @@ static void runFreeParticleSimulation() {
     }
 
     printf("\n--- Simulation End ---\n");
+
+    printf("\n 1 - Export");
+    printf("\n 2 - Back to menu");
+    printf("\n 3 - Exit");
+
+    int optionss;
+    std::cin >> optionss;
+
+    switch (optionss)
+    {
+    case 1:
+        printf("Not implemented yet");
+        break;
+
+    case 2:
+        break;
+    
+    default:
+        printf("Unknown choice. Exiting.\n");
+        return;
+    }
+
+
 }
 
 // ---------------------------------------------------------------------------
-// Entry point
+// Za beginning of main() and user interaction
 // ---------------------------------------------------------------------------
 
 int main() {

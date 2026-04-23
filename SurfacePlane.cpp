@@ -14,5 +14,5 @@ Vector2D SurfacePlane::dragForce(double dragCoeff, double radius, const Vector2D
 
     // Drag opposes the direction of motion.
     Vector2D dragDir = velocity.unitVector() * (-1.0);
-    return dragDir * magnitude;
+    return dragDir * magnitude; 
 }
